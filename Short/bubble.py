@@ -1,13 +1,32 @@
 import random
 
-def bubble(list):
-    new_arr = []
-    for index, element in enumerate(list):
-        print(element, index)
-        if element > list[index + 1]:
-            element = list[index + 1]
-            list[index + 1] = element
-        
+def bubble(list):    
+    """while(True):
+        changes = 0
+        for index, element in enumerate(list):        
+            if index + 1 == len(list):
+                break
+            if  element > list[index + 1]:
+                changes +=1
+                a = list[index + 1]                                
+                list[index + 1] = element
+                list[index] = a
+            else:                
+                list[index] = element
+        if changes ==0:
+            break 
+    
+    """
+    n = len(list)
+
+    for i in range(n):
+        for j in range(0, n - i - 1): # O(n) * O(n) = O(n * n) = O(n**2)
+
+            if list[j] > list[j + 1]:
+                list[j], list[j + 1] = list[j + 1], list[j]
+
+    
+    print(list)
         
 
 
